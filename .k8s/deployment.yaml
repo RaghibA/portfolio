@@ -18,7 +18,7 @@ spec:
       containers:
       - name: portfolio
         image: ghcr.io/raghiba/portfolio:latest
-        imagePullPolicy: Never  # For local development
+        imagePullPolicy: Always  # For local development
         ports:
         - containerPort: 80
         resources:
