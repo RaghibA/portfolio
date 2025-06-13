@@ -1,19 +1,19 @@
 name: Deploy Portfolio
 on:
   workflow_dispatch:
-
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-
       - name: Setup kubectl and deploy
         uses: tale/kubectl-action@v1
         with:
           base64-kube-config: ${{ secrets.KUBECONFIG_SECRET }}
-
+      - name: Create namespace if it doesn't exist
+        run: |
+          kubectl create namespace portfolio --dry-run=client -o yaml | kubectl apply -f -
       - name: Apply Kubernetes Manifests
         run: |
           kubectl apply -f .k8s/deployment.yaml -n portfolio
