@@ -1,0 +1,21 @@
+name: Deploy Portfolio
+on:
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup kubectl and deploy
+        uses: tale/kubectl-action@v1
+        with:
+          base64-kube-config: ${{ secrets.KUBECONFIG_SECRET }}
+
+      - name: Apply Kubernetes Manifests
+        run: |
+          kubectl apply -f .k8s/deployment.yaml -n portfolio
+          kubectl apply -f .k8s/service.yaml -n portfolio
+          kubectl apply -f .k8s/ingress.yaml -n portfolio
