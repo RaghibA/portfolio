@@ -1,21 +1,33 @@
-name: Deploy Portfolio
+name: Build Portfolio
+
 on:
-  workflow_dispatch:
+  push:
+    branches:
+      - main
+
 jobs:
-  deploy:
+  build-and-push:
     runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+      packages: write
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-      - name: Setup kubectl and deploy
-        uses: tale/kubectl-action@v1
+
+      - name: Log into GHCR
+        uses: docker/login-action@v3
         with:
-          base64-kube-config: ${{ secrets.KUBECONFIG_SECRET }}
-      - name: Create namespace if it doesn't exist
-        run: |
-          kubectl create namespace portfolio --dry-run=client -o yaml | kubectl apply -f -
-      - name: Apply Kubernetes Manifests
-        run: |
-          kubectl apply -f .k8s/deployment.yaml -n portfolio
-          kubectl apply -f .k8s/service.yaml -n portfolio
-          kubectl apply -f .k8s/ingress.yaml -n portfolio
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build and push image
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          file: ./Dockerfile
+          push: true
+          tags: ghcr.io/raghiba/portfolio:latest
