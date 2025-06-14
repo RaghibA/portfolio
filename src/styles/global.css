@@ -1,4 +1,29 @@
 /* Global CSS for V2 Portfolio */
+/* Make everything black - no white anywhere */
+html, body {
+  background-color: #000000 !important;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+/* Fix overscroll areas */
+html {
+  background-color: #000000 !important;
+  overscroll-behavior: none; /* Prevents bounce/glow effects */
+}
+
+/* Make sure root container is black */
+#root {
+  background-color: #000000;
+  min-height: 100vh;
+}
+
+/* Fix mobile landscape white sides */
+body {
+  background-color: #000000 !important;
+  overflow-x: hidden; /* Prevents horizontal scroll */
+}
 
 /* CSS Reset & Base Styles */
 * {
