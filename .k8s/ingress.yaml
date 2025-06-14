@@ -1,7 +1,7 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: portfolio
+  name: portfolio-ingress
   namespace: portfolio
   annotations:
     kubernetes.io/ingress.class: "traefik"
@@ -21,4 +21,4 @@ spec:
   tls:
   - hosts:
     - me.raghiba.com
-    secretName: iot-admin-tls
+    secretName: portfolio-tls
