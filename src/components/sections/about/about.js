@@ -13,13 +13,13 @@ const About = () => {
             </h2>
             <div className="about-list">
               <p>
-                &gt; 2+ years building scalable systems
+                &gt; 2+ years of professional experience
               </p>
               <p>
-                &gt; Proficient in Go and cloud native technologies
+                &gt; Proficient in Go, JavaScript, and cloud native technologies
               </p>
               <p>
-                &gt; Experienced with Docker, Kubernetes, and observability tools
+                &gt; Experienced with Docker, Kubernetes, testing, and observability tools
               </p>
             </div>
           </div>
@@ -33,7 +33,7 @@ const About = () => {
                 </div>
                 <h3 className="card-title">Developer Tooling</h3>
                 <p className="card-description">
-                  Building tools, CLIs, and services that improve the developer experience
+                  Building tools, CLIs, test frameworks, and other programs that improve the developer experience
                   and support scalable system development.
                 </p>
               </div>
@@ -43,10 +43,10 @@ const About = () => {
                   <Database size={24} className="card-icon" />
                   <span className="card-label">BACKEND</span>
                 </div>
-                <h3 className="card-title">System Architecture</h3>
+                <h3 className="card-title">Cloud Native</h3>
                 <p className="card-description">
-                  Designing scalable APIs and cloud infrastructure
-                  for high-performance, resilient applications.
+                  Designing resilient backend services with containers, service meshes, observability tools, and orchestration platforms
+                  like Docker and Kubernetes
                 </p>
               </div>
             </div>
