@@ -5,45 +5,52 @@ import './projects.css';
 const Projects = () => {
   const projects = [
     {
-      title: "Neural Network Dashboard",
-      description: "Real-time ML model monitoring system with advanced analytics and performance metrics visualization.",
-      tech: ["React", "TensorFlow", "WebGL", "Node.js"],
-      status: "PRODUCTION",
+      title: "Real Time Analytics Platform",
+      description: "Analytics tool that allows users to configure telemetry channels to send and recieve live data",
+      tech: ["Go", "PostgreSQL", "Kubernetes", "Docker"],
+      status: "PROTOTYPE",
+      year: "2025"
+    },
+    {
+      title: "NBA Stats ETL",
+      description: "ETL pipeline for transforming NBA kaggle datasets into player stats used in game simulations",
+      tech: ["Python", "Airflow", "PostgreSQL"],
+      status: "IN DEVELOPMENT",
       year: "2024"
     },
     {
-      title: "Quantum Computing Simulator",
-      description: "Browser-based quantum circuit simulator with drag-and-drop interface and state visualization.",
-      tech: ["Vue.js", "WebAssembly", "Python", "Docker"],
-      status: "BETA",
-      year: "2024"
-    },
-    {
-      title: "Blockchain Analytics Engine",
-      description: "High-performance cryptocurrency transaction analysis tool with real-time monitoring capabilities.",
-      tech: ["Go", "PostgreSQL", "Redis", "GraphQL"],
+      title: "NBA 1v1 Simulation",
+      description: "NBA player 1v1 simulation",
+      tech: ["JavaScript", "PostgreSQL", "Nest.js", "React.js"],
       status: "LIVE",
       year: "2023"
     },
     {
-      title: "Neural Network Dashboard",
-      description: "Real-time ML model monitoring system with advanced analytics and performance metrics visualization.",
-      tech: ["React", "TensorFlow", "WebGL", "Node.js"],
-      status: "PRODUCTION",
-      year: "2024"
+      title: "Sequential Test Runner",
+      description: "API testing tool that allows users to run a series of API requests in a single test to validate e2e flow of applications",
+      tech: ["Go", "JavaScript", "PostgreSQL", "React.js"],
+      status: "IN DEVELOPMENT",
+      year: "2025"
     },
     {
-      title: "Quantum Computing Simulator",
-      description: "Browser-based quantum circuit simulator with drag-and-drop interface and state visualization.",
-      tech: ["Vue.js", "WebAssembly", "Python", "Docker"],
-      status: "BETA",
-      year: "2024"
+      title: "Ant Colony Simulation",
+      description: "Ant colony simulation engine using boids and quadtrees",
+      tech: ["C++", "JavaScript", "SFML"],
+      status: "IN DEVELOPMENT",
+      year: "2025"
     },
     {
-      title: "Blockchain Analytics Engine",
-      description: "High-performance cryptocurrency transaction analysis tool with real-time monitoring capabilities.",
-      tech: ["Go", "PostgreSQL", "Redis", "GraphQL"],
-      status: "LIVE",
+      title: "Pokemon TCG",
+      description: "Allows pokemon card collectors to track their decks and view the value of cards via pokemontcg apis",
+      tech: ["Go", "React.js", "MongoDB"],
+      status: "PROTOTYPE",
+      year: "2023"
+    },
+    {
+      title: "Basketball reference web scrapper",
+      description: "Player stat scrapping program formerly used to provide player stats to 1v1 simulation",
+      tech: ["Python"],
+      status: "COMPLETE",
       year: "2023"
     }
   ];
